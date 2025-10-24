@@ -70,17 +70,17 @@
         </dependency>
 
 
-				<dependency>
-						<groupId>org.datanucleus</groupId>
-						<artifactId>datanucleus-jodatime</artifactId>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-jodatime</artifactId>
             <version>[${dn.jodatime.min.ver}, ${dn.jodatime.max.ver})</version>
-				</dependency>
+        </dependency>
 
-				<dependency>
-						<groupId>joda-time</groupId>
-						<artifactId>joda-time</artifactId>
-						<version>2.14.0</version>
-				</dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.14.0</version>
+        </dependency>
 
     </dependencies>
 
