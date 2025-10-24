@@ -8,6 +8,8 @@ import static org.junit.Assert.*;
 import mydomain.model.*;
 import org.datanucleus.util.NucleusLogger;
 
+import org.joda.time.LocalDate;
+
 public class SimpleTest
 {
     @Test
@@ -22,9 +24,21 @@ public class SimpleTest
         {
             tx.begin();
 
-            // [INSERT code here to persist object required for testing]
+            // Persist entity with LocalDate
+            LocalDate date = new LocalDate(2025, 10, 16);
+            TestEntity entity = new TestEntity(date);
+            pm.makePersistent(entity);
 
             tx.commit();
+
+            // Query with same LocalDate
+            Query<TestEntity> query = pm.newQuery(TestEntity.class, "testDate == :date");
+            query.setNamedParameters(Map.of("date", date));
+            TestEntity found = query.executeUnique();
+
+            System.out.println("Saved: " + date + ", Found: " + found.getTestDate());
+            assertEquals(date, found.getTestDate());
+
         }
         catch (Throwable thr)
         {

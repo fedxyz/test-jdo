@@ -18,6 +18,8 @@
         <dn.datastore.min.ver>6.0.0-m1</dn.datastore.min.ver>
         <dn.datastore.max.ver>6.9</dn.datastore.max.ver>
         <dn.maven.plugin.ver>6.0.0-m1</dn.maven.plugin.ver>
+        <dn.jodatime.min.ver>6.0.0-m1</dn.jodatime.min.ver>
+        <dn.jodatime.max.ver>6.9</dn.jodatime.max.ver>
     </properties>
 
     <dependencies>
@@ -66,6 +68,20 @@
             <artifactId>log4j-core</artifactId>
             <version>2.17.1</version>
         </dependency>
+
+
+				<dependency>
+						<groupId>org.datanucleus</groupId>
+						<artifactId>datanucleus-jodatime</artifactId>
+            <version>[${dn.jodatime.min.ver}, ${dn.jodatime.max.ver})</version>
+				</dependency>
+
+				<dependency>
+						<groupId>joda-time</groupId>
+						<artifactId>joda-time</artifactId>
+						<version>2.14.0</version>
+				</dependency>
+
     </dependencies>
 
     <build>
